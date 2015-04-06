@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_customer_edit>
+        <reference name="customer_edit_tabs">
+            <action method="addTab">
+                <name>customer_edit_tab_comment</name>
+                <block>customer_comments/adminhtml_customer_edit_tab_comment</block>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_tabs">
+            <action method="addTab">
+                <name>customer_comment</name>
+                <block>customer_comments/adminhtml_sales_order_view_tab_comment</block>
+            </action>         
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

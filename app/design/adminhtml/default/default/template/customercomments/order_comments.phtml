@@ -1,0 +1,22 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Customer Comments</h4>
+    </div>
+    <div id="group_fields4" class="fieldset fieldset-wide">
+        <div class="box-left">
+            <ul class="note-list">
+            <?php if(count($this->getCustomerComments()) > 0): ?>
+            <?php foreach($this->getCustomerComments() as $_comment): ?>
+                <li>
+                    <a href="<?php echo $this->getDeleteCommentUrl($_comment->getId()) ?>" class="delete-comment" style="float: right;margin: 2px 0 10px 10px;"><img src="<?php echo $this->getSkinUrl('images/cancel_icon.gif'); ?>" alt="Delete" /></a>
+                    <strong><?php echo $this->helper('core')->formatDate($_comment->getCreatedAt(), 'medium') ?></strong> <?php echo $this->helper('core')->formatTime($_comment->getCreatedAt(), 'medium') ?>
+                    <br>
+                    <?php echo $this->escapeHtml($_comment->getComment(), array('b', 'br', 'strong', 'i', 'u', 'a')) ?>
+                </li>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
